@@ -1,0 +1,33 @@
+<!--pages/user/user.wxml-->
+<view class='container'>
+    <view class='userInfo' bindtap="personalInfo"> 
+        <image class="userAvatarUrl" src="{{userImage}}"></image>
+        <view class="center">
+            <text class="userNickName">{{userNickName}}</text>
+            <text wx:if="{{type==1}}">普通用户</text>
+            <text wx:if="{{type==2}}">经销商</text>
+            <text wx:if="{{type==3}}">内部员</text>
+            <text wx:if="{{integralTitle}}">积分:{{integral}} 等级:{{integralTitle}}</text>
+        </view>
+        <image class='arrow' src='../../images/arrowWrite.png' mode='widthFix'></image>
+    </view>
+    <view class='part'>
+        <view class='mine-item' bindtap="creditslog">
+            <text class='title'>积分记录</text>
+            <image class='arrow' src='../../images/arrow.png' mode='widthFix'></image>
+        </view>
+        <view class='mine-item' bindtap="message">
+            <text class='title'>等级</text>
+            <image class='arrow' src='../../images/arrow.png' mode='widthFix'></image>
+        </view>
+        <navigator class='mine-item' url='../protocol/protocol?value=2'>
+            <text class='title'>积分规则</text>
+            <image class='arrow' src='../../images/arrow.png' mode='widthFix'></image>
+        </navigator>
+        <view class='mine-item' bindtap="callCustomService">
+            <text class='title'>联系客服</text>
+            <text class='value'>{{customServicePhone?customServicePhone:''}}</text>
+        </view>
+    </view>
+    <button class='submit-button' bindtap='logout'>退出登录</button>
+</view>

@@ -1,0 +1,4 @@
+/* pages/videos/videos.wxss */
+.videoPlay{
+    width: 100%;
+}

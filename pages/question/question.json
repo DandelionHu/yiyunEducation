@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "v-loading": "/components/loading/loading",
+    "v-classify": "/components/classify/classify"
+  },
+  "navigationBarTitleText": "常见问题"
+}

@@ -1,0 +1,7 @@
+<!--pages/protocol/protocol.wxml-->
+<view class='container'>
+    <view class="padd" wx:if='{{canRichTextUse&&protocol}}'>
+        <rich-text nodes="{{protocol}}"></rich-text>
+    </view>
+    <text wx:if='{{!canRichTextUse&&protocol}}'>暂不支持富文本，请升级微信</text>
+</view>

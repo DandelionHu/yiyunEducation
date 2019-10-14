@@ -1,0 +1,6 @@
+<!--pages/accredit/accredit.wxml-->
+<view class='container'>
+    <image src="../../images/logo.png" class="logo" mode="widthFix"/>
+    <button class='submit-button' bindgetuserinfo="bindgetuserinfo" open-type="getUserInfo">注册</button>
+    <button class='submit-button' bindgetuserinfo="bindgetuserinfoLogin" open-type="getUserInfo">登录</button>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "v-carousel": "/components/carousel/carousel",
+    "v-loading": "/components/loading/loading",
+    "v-videobox": "/components/videobox/videobox"
+  }
+}

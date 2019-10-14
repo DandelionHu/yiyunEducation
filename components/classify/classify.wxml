@@ -1,0 +1,19 @@
+<!--components/classify/classify.wxml-->
+<view class="classify">
+    <view class="row" wx:if="{{!unfold}}">
+        <scroll-view scroll-x="true" class="classify-content">
+            <text class="classify-item {{typeId==item.id?'active':''}}" data-items="{{item}}" 
+            catchtap="chooseClassify" wx:for="{{typeData}}" wx:key="index">{{item.name}}</text>
+        </scroll-view>
+        <text class="classify-item" catchtap="showMoreType">更多</text>
+    </view>
+    <view class="column" wx:if="{{unfold}}">
+        <view class="classify-wrap">
+            <text class="classify-item {{typeId==item.id?'active':''}}" data-items="{{item}}" 
+            catchtap="chooseClassify" wx:for="{{typeData}}" wx:key="index">{{item.name}}</text>
+        </view>
+        <view class="classify-up" catchtap="upType">
+            <image src="../../images/unfold.png" class="unfold" mode="widthFix"/>收起
+        </view>
+    </view>
+</view>

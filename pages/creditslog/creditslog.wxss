@@ -1,0 +1,4 @@
+/* pages/creditslog/creditslog.wxss */
+.books-container{
+    height: 1000px;
+}

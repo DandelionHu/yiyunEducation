@@ -1,0 +1,16 @@
+/* components/noShop/noShop.wxss */
+.noInfo{
+    width: 100%;
+}
+.noInfo image.img{
+    width: 750rpx;
+    height: 230rpx;
+    margin: 0 auto;
+}
+.noInfo text.text{
+    display:block;
+    line-height:80rpx;
+    color:#999;
+    text-align:center;
+    font-size:28rpx;
+}

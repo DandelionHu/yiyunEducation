@@ -1,0 +1,292 @@
+/* 清除格式 */
+button::after {
+    border: none;
+    background: transparent
+}
+.placeholder-color {
+    color: #ccc;
+}
+/*  重写 radio 样式  */
+/* 未选中的 背景样式 */
+radio .wx-radio-input {
+    border-radius: 50%;
+    /* 圆角 */
+    width: 38rpx;
+    height: 38rpx;
+    border-color: #adadad;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked {
+    border-color: #00b38b;
+    background: #00b38b !important;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before {
+    border-radius: 50%;
+    /* 圆角 */
+    width: 38rpx;
+    /* 选中后对勾大小，不要超过背景的尺寸 */
+    height: 38rpx;
+    /* 选中后对勾大小，不要超过背景的尺寸 */
+    line-height: 38rpx;
+    text-align: center;
+    font-size: 28rpx;
+    /* 对勾大小 30rpx */
+    color: #fff;
+    /* 对勾颜色 白色 */
+    background: transparent;
+    transform: translate(-50%, -50%) scale(1);
+    -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.radio-group {
+    display: inline-block;
+}
+.radio-group .radio {
+    margin:0px 20rpx;
+    font-size:28rpx;
+    line-height:80rpx;
+    display: inline-block    
+}
+/* 全局 */
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+}
+/* 左右模式 */
+.form-box {
+    position: relative;
+    background: #fff;
+    padding: 0 20rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+    line-height: 80rpx;
+    height: 80rpx;
+    display: flex;
+    flex-direction: row
+}
+.form-box .title {
+    min-width: 200rpx;
+    font-size: 28rpx;
+    color: #333;
+    line-height: 80rpx;
+}
+.form-box .value {
+    min-width: 226rpx;
+    font-size: 28rpx;
+    color: #666;
+    line-height: 80rpx;
+    height: 80rpx;
+    flex: 1
+}
+.form-box .arrow{
+    width: 13rpx;
+    height: 22rpx;
+}
+
+/* 同意协议 */
+.protocol {
+    width: 100%;
+    font-size: 28rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    display: flex
+}
+.protocol .icon {
+    height: 80rpx;
+    width: 78rpx;
+    margin: 0rpx;
+}
+.protocol navigator {
+    display: inline-block;
+    color: #00b38b;
+}
+/* 提交按钮 */
+.submit-button {
+    width: 90%;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    margin: 70rpx auto 70rpx;
+    background: #00b38b;
+    color: #fff;
+    border: none;
+    border-radius: 5rpx;
+    text-align: center;
+}
+/* 申请提示信息 */
+.noApply {
+    width: 100%;
+    background: #fff;
+    margin: 20rpx 0rpx;
+    padding: 100rpx 0rpx;
+}
+.noApply .img {
+    width: 274rpx;
+    height: 216rpx;
+    margin: 30rpx auto;
+    display: block;
+}
+.noApply .txt {
+    line-height: 80rpx;
+    color: #666;
+    text-align: center;
+    font-size: 30rpx;
+}
+.noApply .blod {
+    color: #000;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    text-align: center;
+}
+.noApply .p {
+    line-height: 40rpx;
+    color: #999;
+    text-align: center;
+    font-size: 28rpx;
+}
+/* 个人中心 */
+.part{
+    width: 100%;
+}
+.mine-item {
+    height: 88rpx;
+    background: #fff;
+    margin: 0rpx 20rpx;
+    border-bottom: 1rpx solid #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mine-item .title {
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 28rpx;
+    color: #333333;
+}
+.mine-item .arrow {
+    width: 13rpx;
+    height: 22rpx;
+}
+.mine-item .value {
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 26rpx;
+    color: #b3b3b3;
+}
+/* 分页 */
+.loading {
+    margin-top: 10rpx;
+    height: 70rpx;
+    display: block;
+}
+.loading-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.empty-tip {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    line-height: 80rpx;
+    color: #999;
+}
+.noData{
+    color: #999;
+    line-height: 80rpx;
+    display: block;
+    text-align: center;
+    font-size: 28rpx;
+}
+/* 搜索 */
+.top-part {
+    display: flex;
+    height: 90rpx;
+    width: 100%;
+    z-index: 10;
+}
+.search-bar {
+    flex: 1;
+    height: 60rpx;
+    border-radius: 30rpx;
+    background: #fff;
+    margin: 15rpx 10rpx;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+.search-icon {
+    height: 27rpx;
+    width: 27rpx;
+    margin: 0rpx 20rpx;
+}
+.search-placeholder {
+    color: #d0d0d0;
+}
+.search-input {
+    border-top-right-radius: 15rpx;
+    border-bottom-right-radius: 15rpx;
+    display: inline-block;
+    height: 60rpx;
+    flex: 1;
+    font-size: 28rpx;
+}
+.cancel-img{
+    height: 24rpx;
+    width: 24rpx;
+    margin: 0rpx 20rpx;
+}
+/* 列表 */
+.data-tip{
+    width: 100%;
+}
+.view-list{
+    background: #fff;
+    padding: 15rpx 0rpx;
+    display: flex;
+    align-items: center;
+    margin-top: 15rpx;
+    width: 100%;
+}
+.view-list .title{
+    flex: 1;
+    color: #4a4a4a;
+    font-size: 28rpx;
+    line-height: 50rpx;
+    margin-left: 20rpx;
+}
+.view-list .arrow{
+    width: 13rpx;
+    height: 22rpx;
+    margin:0rpx 40rpx;       
+}
+/* 切换 */
+.tab {
+    width:100%;
+    text-align:center;
+    background:#fff;
+    display: flex;
+}
+.tab>view {
+    flex:1;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #333;
+}
+.tab>view.active {
+    color: #00b389;
+}
+.tab>view.active text {
+    border-bottom: 1rpx solid #00b389;
+}
+.tab>view text {
+    display: inline-block;
+    line-height: 78rpx;
+}

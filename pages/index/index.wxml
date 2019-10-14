@@ -1,0 +1,31 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+    <view class='top-part'>
+        <view class='search-bar'>
+            <image class='search-icon' src='../../images/search-icon.png' mode="widthFix"></image>
+            <input class='search-input' type='text' value='{{keyword}}' auto-focus="true"
+            placeholder='请输入搜索关键词' placeholder-class='search-placeholder' bind:confirm="onConfirm"></input>
+            <image class="cancel-img" src="../../images/cancel.png" catch:tap="onDelete"></image>
+        </view>
+    </view>
+    <v-carousel  banner="{{banner}}"/>
+    <view class="skip">
+        <view class="box" bindtap="otherStore">
+            <image mode="widthFix" src="../../images/video.png"/>
+            <text>视频课件</text>
+        </view>
+        <view class="box" bindtap="customerPersonnel">
+            <image mode="widthFix" src="../../images/matter.png"/>
+            <text>文件课件</text>
+        </view>
+    </view>
+    <view class="tab">
+        <view wx:for="{{tabSwitchArr}}" class="{{item.active?'active':''}}" 
+        data-tab="{{item}}" bindtap="tabSwitch" bind:key="id">
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+    <view class="course-content">
+        <v-videobox imgUrl="{{}}" isVideo="{{}}" title="{{}}"></v-videobox>
+    </view>
+</view>

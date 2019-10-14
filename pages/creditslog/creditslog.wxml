@@ -1,0 +1,14 @@
+<!--pages/creditslog/creditslog.wxml-->
+<view class='container'>
+    <view>
+        <block wx:for="{{dataArray}}" wx:key="{{item.id}}" wx:if="{{dataArray.length}}">
+            <view class="books-container">{{item.id}}</view>
+        </block>
+        <v-loading class="loading" wx:if="{{loading}}" />
+        <text wx:if="{{searchEnding && dataArray.length}}" class="noData">没有更多了~</text>
+    </view>
+
+    <text wx:if="{{!empty}}" class="empty-tip">没有数据~</text>
+</view>
+<v-loading class="loading-center" wx:if="{{loadingCenter}}" />
+

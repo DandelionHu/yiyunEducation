@@ -1,0 +1,19 @@
+<!--pages/videos/videos.wxml-->
+<view class="container">
+    <video id="myVideo" class="videoPlay" src="{{srcUrl}}" 
+    controls="{{controls}}" 
+    autoplay="{{autoplay}}"
+    custom-cache="{{false}}"
+    show-center-play-btn="{{false}}"
+    show-fullscreen-btn="{{false}}"
+    show-play-btn="{{false}}"
+    enable-progress-gesture="{{false}}"
+
+    bindended="ended"
+    bindpause="pause"
+    bindplay="play"
+    bindtimeupdate="timeupdate"
+    initial-time="{{initialTime}}"></video>
+    <button bindtap="playVideo">播放</button>
+    <button bindtap="pauseVideo">暂停</button>
+</view>

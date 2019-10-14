@@ -1,0 +1,17 @@
+<!--pages/personal/personal.wxml-->
+<view class='container'>
+    <view class="part">
+        <view class='form-box'>
+            <text class='titel'>性别</text>
+            <image class='arrow' src='{{hostImage}}/arrow.png' mode='widthFix'></image>
+            <picker class="companyPic" bindchange="bindPickerChange" value="{{index}}" range="{{companyList}}" range-key="name">
+                <view class="picker">{{companyList[index].name}}</view>
+            </picker>
+        </view>
+        <view class="form-box">
+            <text class="titel">手机号码</text>
+            <text class="binding" bindtap="rebinding">重新绑定</text>
+            <text class="userPhone">{{phone}}</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+    <view class='login'>
+        <view class='form-box'>
+            <text class='title'>手机号码</text>
+            <input class='value' type='text' value='{{phone}}' placeholder='请输入手机号码' 
+            placeholder-class='placeholder-color' bindinput='bindPhoneInput' maxlength='11'></input>
+        </view>
+        <view class='form-box'>
+            <input class='value' type='number' value='{{code}}' placeholder='请输入验证码' 
+            placeholder-class='placeholder-color' bindinput='bindCodeInput' maxlength="6"></input>
+            <button class='title code' disabled='{{sendCodeDisabled}}' catchtap='sendCode'>{{verificationText}}</button>
+        </view>
+    </view>
+    <button class='submit-button' bindtap='bindSubmit'>登录</button>
+</view>

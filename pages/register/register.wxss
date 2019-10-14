@@ -1,0 +1,27 @@
+/* pages/register/register.wxss */
+page{
+    background: #f5f5f5;
+}
+.register{
+    margin: 20rpx 0rpx;
+    width: 100%;
+}
+.form-box .code{
+    height: 60rpx;
+    line-height: 60rpx;
+    margin: 10rpx 0rpx;
+    background: #00b38b;
+    color: #fff;
+    font-size: 30rpx;
+    border-radius: 5rpx;
+}
+.form-box .address{
+    display: flex;
+    align-items: center
+}
+.picker-group{
+    flex: 1
+}
+.radio-group .radio:first-child{
+    margin-left: 0rpx;
+}

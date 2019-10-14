@@ -1,0 +1,6 @@
+<!--components/noShop/noShop.wxml-->
+<view class='noInfo'>
+    <image class="img" src="{{hostImage}}/{{image}}" mode='widthFix' />
+    <text class="text">{{text}}</text>
+    <slot name="after"></slot>
+</view>

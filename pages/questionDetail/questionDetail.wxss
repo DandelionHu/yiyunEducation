@@ -1,0 +1,21 @@
+/* pages/questionDetail/questionDetail.wxss */
+.question{
+    width: 100%;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+.question .date{
+    font-size: 28rpx;
+    display: block;
+    text-align: left;
+    color: #999;
+    margin-bottom: 20rpx;
+}
+.question .title{
+    width: 100%;
+    color: #4a4a4a;
+    font-size: 30rpx;
+    line-height: 50rpx;
+    font-weight: bold;
+    margin:20rpx 0rpx;
+}

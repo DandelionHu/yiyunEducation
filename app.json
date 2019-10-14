@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/question/question",
+    "pages/register/register",
+    "pages/user/user",
+    "pages/accredit/accredit",
+    "pages/videoPlay/videoPlay",
+    "pages/login/login",
+    "pages/protocol/protocol",
+    "pages/personal/personal",
+    "pages/creditslog/creditslog",
+    "pages/questionDetail/questionDetail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "云学院",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default",
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "color": "#c7c7c7",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "/images/tab/index@highlight.png",
+        "text": "首页",
+        "iconPath": "/images/tab/index.png"
+      },
+      {
+        "pagePath": "pages/question/question",
+        "selectedIconPath": "/images/tab/question@highlight.png",
+        "iconPath": "/images/tab/question.png",
+        "text": "问题"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "selectedIconPath": "/images/tab/user@highlight.png",
+        "iconPath": "/images/tab/user.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

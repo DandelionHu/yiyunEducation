@@ -1,0 +1,13 @@
+/* pages/accredit/accredit.wxss */
+.logo{
+    width: 280rpx;
+    height: 280rpx;
+    margin-top:120rpx;
+    margin-bottom:100rpx;
+}
+.submit-button{
+    border-radius:40rpx;
+    margin:30rpx auto;
+    width:70%;  
+    border-radius: 10rpx;  
+}

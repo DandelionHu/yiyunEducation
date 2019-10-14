@@ -1,0 +1,11 @@
+<!--pages/questionDetail/questionDetail.wxml-->
+<view class="container">
+    <view class="question">
+        <view class="title">{{title}}</view>
+        <view class="date">{{createTime}}</view>
+        <view wx:if='{{canRichTextUse&&newsContent}}'>
+            <rich-text nodes="{{newsContent}}"></rich-text>
+        </view>
+        <text wx:if='{{!canRichTextUse&&newsContent}}'>暂不支持富文本，请升级微信</text>
+    </view>
+</view>

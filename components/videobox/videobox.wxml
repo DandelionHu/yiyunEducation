@@ -1,0 +1,11 @@
+<!--components/videobox/videobox.wxml-->
+<view class="videobox">
+    <view class="img-box">
+        <image class="img-bg" src="{{imgUrl}}" mode="widthFix"></image>
+        <image class="player" wx:if="{{isVideo}}" src="../../images/player.png" mode="widthFix" ></image>
+    </view>
+    <view class="title">华美星+系列热水器安装教程</view>
+    <view class="bottom" >
+        <view class="tag">中级</view>
+    </view>
+</view>

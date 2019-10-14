@@ -1,0 +1,22 @@
+<!--pages/question/question.wxml-->
+<view class='container'>
+    <view class='top-part'>
+        <view class='search-bar'>
+            <image class='search-icon' src='../../images/search-icon.png' mode="widthFix"></image>
+            <input class='search-input' type='text' value='{{keyword}}' auto-focus="true"
+            placeholder='请输入搜索关键词' placeholder-class='search-placeholder' bind:confirm="onConfirm"></input>
+            <image class="cancel-img" src="../../images/cancel.png" catch:tap="onDelete"></image>
+        </view>
+    </view>
+    <v-classify wx:if="{{classify.length}}" typeData="{{classify}}" typeId="{{typeId}}" bind:type="onType"/>
+    <view wx:if="{{dataArray.length}}" class="data-tip">
+        <view wx:for="{{dataArray}}" wx:key="{{item.id}}" class="view-list" data-items="{{item}}" bindtap="questionDetail">
+            <view class="title">{{item.questions}}</view>
+            <image class='arrow' src='../../images/arrow.png' mode='widthFix'></image>
+        </view>
+        <v-loading class="loading" wx:if="{{loading}}" />
+        <text wx:if="{{searchEnding && dataArray.length}}" class="noData">没有更多了~</text>
+    </view>
+    <text wx:if="{{!empty}}" class="empty-tip">没有数据~</text>
+</view>
+<v-loading class="loading-center" wx:if="{{loadingCenter}}" />
