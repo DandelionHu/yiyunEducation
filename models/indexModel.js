@@ -24,6 +24,46 @@ class IndexModel extends HTTP{
             method:'GET', //请求方式
         })
     }
+    //课件列表
+    getCourseList(data,message){
+        return this.request({
+            url: '/course/findCourses',
+            isToken:false,//是否需要token
+            message:message?message:'',
+            data:data,
+            method:'GET', //请求方式
+        })
+    }
+    //热门课件列表
+    getHotCourseList(data,message){
+        return this.request({
+            url: '/course/hotCourses',
+            isToken:false,//是否需要token
+            message:message?message:'',
+            data:data,
+            method:'GET', //请求方式
+        })
+    }
+    //推荐课件列表
+    getRecommendCourseList(data,message){
+        return this.request({
+            url: '/course/recommendCourses',
+            isToken:false,//是否需要token
+            message:message?message:'',
+            data:data,
+            method:'GET', //请求方式
+        })
+    }
+    //根据id获取课件
+    getById(data,message){
+        return this.request({
+            url: '/wxmini/course/findById',
+            isToken:true,//是否需要token
+            message:message?message:'',
+            data:data,
+            method:'GET', //请求方式
+        })
+    }
 }
 
 export {

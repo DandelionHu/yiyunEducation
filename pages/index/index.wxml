@@ -21,7 +21,7 @@
     </view>
     <view class="tab">
         <view wx:for="{{tabSwitchArr}}" class="{{item.active?'active':''}}" 
-        data-tab="{{item}}" bindtap="tabSwitch" bind:key="id">
+        data-tab="{{item}}" bindtap="tabSwitch" wx:key="{{item.id}}">
             <text>{{item.name}}</text>
         </view>
     </view>

@@ -29,15 +29,24 @@ Page({
         id:3
       }
     ],
-    tabId:1
+    tabId:1,// 1最新 2 最热 3推荐
+    page:1,
+    size:10,
+    dataArray:[],
+    loading:false,//分页加载
+    loadingCenter:false,//首次加载
+    empty:true, //无数据
+    searchEnding:false //没有更多了
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    that=this;
+    pagination=new Pagination(this.data.page,this.data.size)
     this.getBanners()
-    this.getTypes()
+    // this.getTypes()
   },
 
   /**
@@ -51,7 +60,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getList()
   },
 
   /**
@@ -147,6 +156,71 @@ Page({
   onDelete(){
     this.setData({
       keyword:''
+    })
+  },
+  //获取课件列表
+  getList(){
+    
+  },
+  //获取最新课程
+  getCourseList(){
+    const data={
+      page:pagination.getCurrentPage(),
+      size:pagination.getCurrentSize(),
+      keyword:this.data.keyword,
+    }
+    indexModel.getCourseList(data,'').then(res=>{
+      const data=res.returnValue
+      if(data){
+        pagination.setMoreData(data)
+        this.setData({
+          dataArray:pagination.getCurrentData(),
+          empty:pagination.getCurrentEmpty(),
+          searchEnding:pagination.getCurrentEnding(),
+          loading:false,
+          loadingCenter:false
+        })
+      }
+    })
+  },
+  //获取热门课件列表
+  getHotCourseList(){
+    const data={
+      keyword:this.data.keyword,
+    }
+    indexModel.getHotCourseList(data,'').then(res=>{
+      const data=res.returnValue
+      if(data){
+        pagination.setMoreData(data)
+        this.setData({
+          dataArray:pagination.getCurrentData(),
+          empty:pagination.getCurrentEmpty(),
+          searchEnding:pagination.getCurrentEnding(),
+          loading:false,
+          loadingCenter:false
+        })
+      }
+    })
+  },
+  //获取推荐课件列表
+  getRecommendCourseList(){
+    const data={
+      page:pagination.getCurrentPage(),
+      size:pagination.getCurrentSize(),
+      keyword:this.data.keyword,
+    }
+    indexModel.getRecommendCourseList(data,'').then(res=>{
+      const data=res.returnValue
+      if(data){
+        pagination.setMoreData(data)
+        this.setData({
+          dataArray:pagination.getCurrentData(),
+          empty:pagination.getCurrentEmpty(),
+          searchEnding:pagination.getCurrentEnding(),
+          loading:false,
+          loadingCenter:false
+        })
+      }
     })
   }
 })
