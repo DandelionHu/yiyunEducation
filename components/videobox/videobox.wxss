@@ -30,7 +30,8 @@
     font-size: 30rpx;
 }
 .videobox  .bottom{
-
+    display: flex;
+    align-items: center;
 }
 .tag{
     background: #00b38b;
@@ -38,4 +39,10 @@
     display: inline-block;
     color: #fff;
     font-size: 28rpx;
+}
+.lagel{
+    display: inline-block;
+    color: #999;
+    font-size: 28rpx;
+    margin-left: 20rpx;
 }

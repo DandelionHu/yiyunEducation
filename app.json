@@ -10,7 +10,9 @@
     "pages/protocol/protocol",
     "pages/personal/personal",
     "pages/creditslog/creditslog",
-    "pages/questionDetail/questionDetail"
+    "pages/questionDetail/questionDetail",
+    "pages/allCourse/allCourse",
+    "pages/search/search"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

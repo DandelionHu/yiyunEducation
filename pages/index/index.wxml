@@ -1,20 +1,18 @@
 <!--pages/index/index.wxml-->
 <view class="container">
-    <view class='top-part'>
-        <view class='search-bar'>
-            <image class='search-icon' src='../../images/search-icon.png' mode="widthFix"></image>
-            <input class='search-input' type='text' value='{{keyword}}' auto-focus="true"
-            placeholder='请输入搜索关键词' placeholder-class='search-placeholder' bind:confirm="onConfirm"></input>
-            <image class="cancel-img" src="../../images/cancel.png" catch:tap="onDelete"></image>
+    <view class="header">
+        <view class="box" bind:tap="onSearch">
+            <image class='head-img' src='../../images/search-icon.png' mode="widthFix"></image>
+            <text>搜索课程</text>
         </view>
     </view>
     <v-carousel  banner="{{banner}}"/>
     <view class="skip">
-        <view class="box" bindtap="otherStore">
+        <view class="box" bindtap="videoCourse">
             <image mode="widthFix" src="../../images/video.png"/>
             <text>视频课件</text>
         </view>
-        <view class="box" bindtap="customerPersonnel">
+        <view class="box" bindtap="fileCourse">
             <image mode="widthFix" src="../../images/matter.png"/>
             <text>文件课件</text>
         </view>
@@ -26,6 +24,8 @@
         </view>
     </view>
     <view class="course-content">
-        <v-videobox imgUrl="{{}}" isVideo="{{}}" title="{{}}"></v-videobox>
+        <v-videobox wx:for="{{dataArray}}" wx:key="{{item.id}}" showLevel="{{item.showLevel}}"
+        imgUrl="{{item.cover}}" isType="{{item.type}}" title="{{item.title}}"></v-videobox>
     </view>
 </view>
+<v-loading class="loading-center" wx:if="{{loadingCenter}}" />

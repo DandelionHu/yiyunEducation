@@ -185,7 +185,7 @@ radio .wx-radio-input.wx-radio-input-checked::before {
     display: block;
 }
 .loading-center {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
 }

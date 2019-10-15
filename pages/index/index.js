@@ -1,9 +1,7 @@
 // pages/index/index.js
 import {IndexModel} from '../../models/indexModel'
-import {Pagination} from '../../models/pagination'
 const indexModel=new IndexModel()
 var that;
-var pagination;
 Page({
 
   /**
@@ -30,13 +28,8 @@ Page({
       }
     ],
     tabId:1,// 1最新 2 最热 3推荐
-    page:1,
-    size:10,
     dataArray:[],
-    loading:false,//分页加载
     loadingCenter:false,//首次加载
-    empty:true, //无数据
-    searchEnding:false //没有更多了
   },
 
   /**
@@ -44,9 +37,7 @@ Page({
    */
   onLoad: function (options) {
     that=this;
-    pagination=new Pagination(this.data.page,this.data.size)
     this.getBanners()
-    // this.getTypes()
   },
 
   /**
@@ -113,6 +104,7 @@ Page({
       tabId: data.id,
       tabSwitchArr
     });
+    this.getList()
   },
   //获取广告图
   getBanners(){
@@ -133,51 +125,31 @@ Page({
       }
     })
   },
-  //获取类别
-  getTypes(){
-    let data={
-      type:1,
-    }
-    indexModel.getTypes(data,'').then(res=>{
-      var data=res.returnValue
-      if (data) {
-        
-      }
-    })
-  },
-  //搜索
-  onConfirm(e){
-    let word=e.detail.value || e.currentTarget.dataset.item;
-    this.setData({
-      keyword: word
-    });
-  },
-  //取消
-  onDelete(){
-    this.setData({
-      keyword:''
-    })
-  },
   //获取课件列表
   getList(){
-    
+    if(this.data.tabId==1){
+      this.getCourseList()
+    }else if(this.data.tabId==2){
+      this.getHotCourseList()
+    }else if(this.data.tabId==3){
+      this.getRecommendCourseList()
+    }
   },
   //获取最新课程
   getCourseList(){
+    this.setData({
+      loadingCenter:true,
+      dataArray:[]
+    })
     const data={
-      page:pagination.getCurrentPage(),
-      size:pagination.getCurrentSize(),
-      keyword:this.data.keyword,
+      page:1,
+      size:10,
     }
     indexModel.getCourseList(data,'').then(res=>{
       const data=res.returnValue
       if(data){
-        pagination.setMoreData(data)
         this.setData({
-          dataArray:pagination.getCurrentData(),
-          empty:pagination.getCurrentEmpty(),
-          searchEnding:pagination.getCurrentEnding(),
-          loading:false,
+          dataArray:data,
           loadingCenter:false
         })
       }
@@ -185,18 +157,16 @@ Page({
   },
   //获取热门课件列表
   getHotCourseList(){
-    const data={
-      keyword:this.data.keyword,
-    }
+    this.setData({
+      loadingCenter:true,
+      dataArray:[]
+    })
+    const data={}
     indexModel.getHotCourseList(data,'').then(res=>{
       const data=res.returnValue
       if(data){
-        pagination.setMoreData(data)
         this.setData({
-          dataArray:pagination.getCurrentData(),
-          empty:pagination.getCurrentEmpty(),
-          searchEnding:pagination.getCurrentEnding(),
-          loading:false,
+          dataArray:data,
           loadingCenter:false
         })
       }
@@ -204,23 +174,37 @@ Page({
   },
   //获取推荐课件列表
   getRecommendCourseList(){
-    const data={
-      page:pagination.getCurrentPage(),
-      size:pagination.getCurrentSize(),
-      keyword:this.data.keyword,
-    }
+    this.setData({
+      loadingCenter:true,
+      dataArray:[]
+    })
+    const data={}
     indexModel.getRecommendCourseList(data,'').then(res=>{
       const data=res.returnValue
       if(data){
-        pagination.setMoreData(data)
         this.setData({
-          dataArray:pagination.getCurrentData(),
-          empty:pagination.getCurrentEmpty(),
-          searchEnding:pagination.getCurrentEnding(),
-          loading:false,
+          dataArray:data,
           loadingCenter:false
         })
       }
+    })
+  },
+  //全部视频课件
+  videoCourse(){
+    wx.navigateTo({
+      url: '/pages/allCourse/allCourse'
+    })
+  },
+  //全部文件课件
+  fileCourse(){
+    wx.navigateTo({
+      url: '/pages/allCourse/allCourse'
+    })
+  },
+  //搜索
+  onSearch(){
+    wx.navigateTo({
+      url: '/pages/search/search'
     })
   }
 })

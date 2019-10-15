@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "v-loading": "/components/loading/loading",
+    "v-classify": "/components/classify/classify",
+    "v-videobox": "/components/videobox/videobox"
+  },
+  "navigationBarTitleText": "视频课程"
+}
