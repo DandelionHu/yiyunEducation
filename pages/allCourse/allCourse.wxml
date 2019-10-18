@@ -2,8 +2,8 @@
 <view class="container">
     <v-classify wx:if="{{classify.length}}" typeData="{{classify}}" typeId="{{typeId}}" bind:type="onType"/>
     <view class="course-content">
-        <v-videobox wx:for="{{dataArray}}" wx:key="{{item.id}}" showLevel="{{item.showLevel}}"
-        imgUrl="{{item.cover}}" isType="{{item.type}}" title="{{item.title}}"></v-videobox>
+        <v-videobox wx:for="{{dataArray}}" wx:key="{{item.id}}" showLevel="{{item.showLevel}}" clickNumbe="{{item.clickNumbe}}"
+        imgUrl="{{item.cover}}" isType="{{item.type}}" title="{{item.title}}" data-item="{{item}}" bindtap="courseDetail"></v-videobox>
         <v-loading class="loading" wx:if="{{loading}}" />
         <text wx:if="{{searchEnding && dataArray.length}}" class="noData">没有更多了~</text>
     </view>

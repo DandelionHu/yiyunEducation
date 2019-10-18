@@ -88,7 +88,11 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  //检测是否登录
+  isLogin(){
+    var value = wx.getStorageSync('token');
+    return value;
+  },
   //切换
   tabSwitch(val){
     const data = val.currentTarget.dataset.tab;
@@ -192,13 +196,13 @@ Page({
   //全部视频课件
   videoCourse(){
     wx.navigateTo({
-      url: '/pages/allCourse/allCourse'
+      url: '/pages/allCourse/allCourse?type=2'
     })
   },
   //全部文件课件
   fileCourse(){
     wx.navigateTo({
-      url: '/pages/allCourse/allCourse'
+      url: '/pages/allCourse/allCourse?type=1'
     })
   },
   //搜索
@@ -206,5 +210,28 @@ Page({
     wx.navigateTo({
       url: '/pages/search/search'
     })
-  }
+  },
+  //视频课程详情
+  courseDetail(e){
+    if(!this.isLogin()){
+      wx.showModal({
+        title: '提示',
+        content: '查看详情需要登录，是否去登录？',
+        confirmText:'去登录',
+        confirmColor:'#00b38b',
+        success(res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '/pages/login/login'
+            })
+          }
+        }
+      })
+      return false;
+    }
+    const item=e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/pages/videoPlay/videoPlay?id='+item.id
+    })
+  },
 })

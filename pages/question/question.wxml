@@ -3,7 +3,7 @@
     <view class='top-part'>
         <view class='search-bar'>
             <image class='search-icon' src='../../images/search-icon.png' mode="widthFix"></image>
-            <input class='search-input' type='text' value='{{keyword}}' auto-focus="true"
+            <input class='search-input' type='text' value='{{keyword}}' 
             placeholder='请输入搜索关键词' placeholder-class='search-placeholder' bind:confirm="onConfirm"></input>
             <image class="cancel-img" src="../../images/cancel.png" catch:tap="onDelete"></image>
         </view>

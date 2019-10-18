@@ -162,7 +162,7 @@ Page({
   },
   //搜索
   onConfirm(e){
-    let word=e.detail.value || e.currentTarget.dataset.item;
+    let word=e.detail.value || e.currentTarget.dataset.item || '';
     this.setData({
       keyword: word
     });
@@ -174,5 +174,28 @@ Page({
       keyword:''
     })
     this.getInit();
-  }
+  },
+  //视频课程详情
+  courseDetail(e){
+    if(!this.isLogin()){
+      wx.showModal({
+        title: '提示',
+        content: '查看详情需要登录，是否去登录？',
+        confirmText:'去登录',
+        confirmColor:'#00b38b',
+        success(res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '/pages/login/login'
+            })
+          }
+        }
+      })
+      return false;
+    }
+    const item=e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/pages/videoPlay/videoPlay?id='+item.id
+    })
+  },
 })

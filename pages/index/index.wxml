@@ -24,8 +24,8 @@
         </view>
     </view>
     <view class="course-content">
-        <v-videobox wx:for="{{dataArray}}" wx:key="{{item.id}}" showLevel="{{item.showLevel}}"
-        imgUrl="{{item.cover}}" isType="{{item.type}}" title="{{item.title}}"></v-videobox>
+        <v-videobox wx:for="{{dataArray}}" wx:key="{{item.id}}" showLevel="{{item.showLevel}}" data-item="{{item}}" bindtap="courseDetail"
+        imgUrl="{{item.cover}}" isType="{{item.type}}" title="{{item.title}}" clickNumbe="{{item.clickNumbe}}"></v-videobox>
     </view>
 </view>
 <v-loading class="loading-center" wx:if="{{loadingCenter}}" />

@@ -7,7 +7,8 @@
     <view class="title">{{title}}</view>
     <view class="bottom">
         <view class="tag">{{showLevel}}</view>
-        <view class="lagel" wx:if="{{isType==1}}">文件</view>
+        <view class="lagel" wx:if="{{isType==1}}">文档</view>
         <view class="lagel" wx:if="{{isType==2}}">视频</view>
+        <view class="lagel">观看次数:{{clickNumbe}}</view>
     </view>
 </view>

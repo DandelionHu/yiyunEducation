@@ -18,7 +18,8 @@ Page({
     loading:false,//分页加载
     loadingCenter:false,//首次加载
     empty:true, //无数据
-    searchEnding:false //没有更多了
+    searchEnding:false, //没有更多了
+    type:'',//类型
   },
 
   /**
@@ -26,6 +27,11 @@ Page({
    */
   onLoad: function (options) {
     that=this;
+    if(options.type){
+      this.setData({
+        type:options.type
+      })
+    }
     pagination=new Pagination(this.data.page,this.data.size)
     this.getTypes()
   },
@@ -142,7 +148,8 @@ Page({
     const data={
       page:pagination.getCurrentPage(),
       size:pagination.getCurrentSize(),
-      type:this.data.typeId
+      courseTypeId:this.data.typeId,
+      type:this.data.type
     }
     indexModel.getCourseList(data,'').then(res=>{
       const data=res.returnValue
@@ -176,7 +183,7 @@ Page({
       })
       return false;
     }
-    const item=e.currentTarget.dataset.items;
+    const item=e.currentTarget.dataset.item;
     wx.navigateTo({
       url: '/pages/videoPlay/videoPlay?id='+item.id
     })

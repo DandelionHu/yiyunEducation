@@ -8,7 +8,8 @@ Component({
     imgUrl:String, //封面
     isType:Number, //课程类型 1 文件 2视频
     title:String, //课程标题 
-    showLevel:String //课程等级
+    showLevel:String, //课程等级
+    clickNumbe:Number //点击次数
   },
 
   /**

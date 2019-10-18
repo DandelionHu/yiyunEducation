@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "v-loading": "/components/loading/loading",
+    "v-videobox": "/components/videobox/videobox"
+  }
 }

@@ -7,6 +7,9 @@ page{
     display: flex;
     flex-direction: column;
 }
+v-classify{
+    width: 100%;
+}
 v-videobox{
     margin-top: 15rpx;
 }

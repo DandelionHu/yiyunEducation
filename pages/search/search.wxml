@@ -10,8 +10,8 @@
         <view class="cancel" bind:tap="onCancel">取消</view>
     </view>
     <view class="course-content">
-        <v-videobox wx:for="{{dataArray}}" wx:key="{{item.id}}" showLevel="{{item.showLevel}}"
-        imgUrl="{{item.cover}}" isType="{{item.type}}" title="{{item.title}}"></v-videobox>
+        <v-videobox wx:for="{{dataArray}}" wx:key="{{item.id}}" showLevel="{{item.showLevel}}" data-item="{{item}}" bindtap="courseDetail"
+        imgUrl="{{item.cover}}" isType="{{item.type}}" title="{{item.title}}" clickNumbe="{{item.clickNumbe}}"></v-videobox>
         <v-loading class="loading" wx:if="{{loading}}" />
         <text wx:if="{{searchEnding && dataArray.length}}" class="noData">没有更多了~</text>
     </view>
