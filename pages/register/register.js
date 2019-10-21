@@ -39,34 +39,34 @@ Page({
     that=this;
     const token = new Token()
     //获取注册信息
-    // token.getInfo(res=>{
-    //   const data=res.returnValue
-    //   if(data){
-    //     let itemSex=that.data.itemSex
-    //     for(let i in itemSex){
-    //       if(itemSex[i].value==data.sex){
-    //         itemSex[i].checked=true
-    //       }else{
-    //         itemSex[i].checked=false
-    //       }
-    //     }
-    //     that.setData({
-    //       id:data.id,
-    //       name:data.name,
-    //       address:data.address,
-    //       phone:data.phone,
-    //       itemSexChecked:data.sex,
-    //       region: [data.province, data.city, data.area],
-    //       success:data.state,
-    //       remarks:data.remarks,
-    //       itemSex:itemSex
-    //     })
-    //   }else{
-    //     that.setData({
-    //       success:3
-    //     })
-    //   }
-    // })
+    token.getInfo(res=>{
+      const data=res.returnValue
+      if(data){
+        let itemSex=that.data.itemSex
+        for(let i in itemSex){
+          if(itemSex[i].value==data.sex){
+            itemSex[i].checked=true
+          }else{
+            itemSex[i].checked=false
+          }
+        }
+        that.setData({
+          id:data.id,
+          name:data.name,
+          address:data.address,
+          phone:data.phone,
+          itemSexChecked:data.sex,
+          region: [data.province, data.city, data.area],
+          success:data.state,
+          remarks:data.remarks,
+          itemSex:itemSex
+        })
+      }else{
+        that.setData({
+          success:3
+        })
+      }
+    })
   },
 
   /**

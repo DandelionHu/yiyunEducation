@@ -106,7 +106,8 @@ Page({
     let data={
       page:pagination.getCurrentPage(),
       size:pagination.getCurrentSize(),
-      keyword:this.data.keyword
+      keyword:this.data.keyword,
+      type:1
     }
     userModel.getIntegralRecord(data,'').then(res=>{
       const data=res.returnValue

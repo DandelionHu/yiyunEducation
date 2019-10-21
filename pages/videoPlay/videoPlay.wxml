@@ -1,19 +1,47 @@
 <!--pages/videos/videos.wxml-->
 <view class="container">
-    <video id="myVideo" class="videoPlay" src="{{srcUrl}}" 
-    controls="{{controls}}" 
-    autoplay="{{autoplay}}"
-    custom-cache="{{false}}"
-    show-center-play-btn="{{false}}"
-    show-fullscreen-btn="{{false}}"
-    show-play-btn="{{false}}"
-    enable-progress-gesture="{{false}}"
+    <view class="video-box">
+        <video id="myVideo" wx:if="{{dataObject.type==2}}" class="videoPlay" src="{{baseUrl+dataObject.filePath}}" 
+                controls="{{controls}}" 
+                autoplay="{{autoplay}}"
+                custom-cache="{{false}}"
+                show-center-play-btn="{{false}}"
+                show-fullscreen-btn="{{false}}"
+                show-play-btn="{{false}}"
+                enable-progress-gesture="{{false}}"
 
-    bindended="ended"
-    bindpause="pause"
-    bindplay="play"
-    bindtimeupdate="timeupdate"
-    initial-time="{{initialTime}}"></video>
+                bindended="ended"
+                bindpause="pause"
+                bindplay="play"
+                bindtimeupdate="timeupdate"
+                initial-time="{{initialTime}}"></video>
+        <view class="video-tit">
+            <view class="title">{{dataObject.title}}</view>
+            <view class="num">已播放{{dataObject.clickNumbe}}次</view>
+        </view>
+        <view class="remarks">{{dataObject.remarks}}</view>
+    </view>
+    <view class="pdf">
+        <image class="" src="" mode="widthFix"></image>
+        <view class="title"></view>
+    </view>
+    <view class="review">
+        <view class="title">课程评论</view>
+        <view class="review-box">
+            <view class="info">
+                <image class="" src="" mode="widthFix" ></image>
+                <text></text>
+            </view>
+            <view class="content"></view>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="box" bind:tap="onReview">
+            <image class='head-img' src='../../images/search-icon.png' mode="widthFix"></image>
+            <text>评论</text>
+        </view>
+    </view>
     <button bindtap="playVideo">播放</button>
     <button bindtap="pauseVideo">暂停</button>
 </view>
+ 

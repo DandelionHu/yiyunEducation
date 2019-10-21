@@ -1,0 +1,11 @@
+<!--pages/review/review.wxml-->
+<view class="container">
+    <view class="review">
+        <radio-group class="radio-group" bindchange="radioChange">
+            <label class="radio" wx:for="{{dataArray}}" wx:key='item.id'>
+                <radio value="{{item.id}}" checked="{{item.checked}}"/>{{item.name}}
+            </label>
+        </radio-group>
+    </view>
+    <button class='submit-button' bindtap='onConfirm'>提交</button>
+</view>

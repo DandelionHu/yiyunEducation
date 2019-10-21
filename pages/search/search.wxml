@@ -4,10 +4,10 @@
         <view class='search-bar'>
             <image class='search-icon' src='../../images/search-icon.png' mode="widthFix"></image>
             <input class='search-input' type='text' value='{{keyword}}' auto-focus="true"
-            placeholder='请输入搜索关键词' placeholder-class='search-placeholder' bind:confirm="onConfirm"></input>
+            placeholder='请输入搜索关键词' bindinput='bindKeywordInput' placeholder-class='search-placeholder' bind:confirm="onConfirm"></input>
             <image class="cancel-img" src="../../images/cancel.png" catch:tap="onDelete"></image>
         </view>
-        <view class="cancel" bind:tap="onCancel">取消</view>
+        <view class="cancel" bind:tap="onCancel">确定</view>
     </view>
     <view class="course-content">
         <v-videobox wx:for="{{dataArray}}" wx:key="{{item.id}}" showLevel="{{item.showLevel}}" data-item="{{item}}" bindtap="courseDetail"

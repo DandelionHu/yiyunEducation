@@ -12,7 +12,8 @@
     "pages/creditslog/creditslog",
     "pages/questionDetail/questionDetail",
     "pages/allCourse/allCourse",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/review/review"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

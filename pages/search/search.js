@@ -95,6 +95,11 @@ Page({
   onShareAppMessage: function () {
 
   }, 
+  bindKeywordInput(e){
+    this.setData({
+      keyword: e.detail.value
+    });
+  },
   //检测是否登录
   isLogin(){
     var value = wx.getStorageSync('token');
@@ -156,9 +161,7 @@ Page({
   },
   //取消
   onCancel(){
-    wx.navigateBack({
-      delta: 1,
-    })
+    this.getInit();
   },
   //搜索
   onConfirm(e){

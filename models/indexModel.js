@@ -64,6 +64,36 @@ class IndexModel extends HTTP{
             method:'GET', //请求方式
         })
     }
+    //评论
+    review(data,message){
+        return this.request({
+            url: '/wxmini/courseReview/review',
+            isToken:true,//是否需要token
+            message:message?message:'',
+            data:data,
+            method:'GET', //请求方式
+        })
+    }
+    //获取课件播放记录
+    getHistory(data,message){
+        return this.request({
+            url: '/wxnimi/courseHistory/findHistory',
+            isToken:true,//是否需要token
+            message:message?message:'',
+            data:data,
+            method:'GET', //请求方式
+        })
+    }
+    //保存课件播放记录
+    saveHistory(data,message){
+        return this.request({
+            url: '/wxnimi/courseHistory/saveHistory',
+            isToken:true,//是否需要token
+            message:message?message:'',
+            data:data,
+            method:'GET', //请求方式
+        })
+    }
 }
 
 export {

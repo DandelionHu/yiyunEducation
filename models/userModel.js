@@ -44,7 +44,7 @@ class UserModel extends HTTP{
             method:'GET', //请求方式
         })
     }
-    //和获取积分记录
+    //获取积分记录
     getIntegralRecord(data,message){
         return this.request({
             url: '/wxmini/integralRecord/findPage',
